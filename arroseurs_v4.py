@@ -13,7 +13,7 @@ def toggle_gpio(self, pin,v):
     brightness = self.get_property('brightness')
     io_loop = tornado.ioloop.IOLoop.current()
     if not v == False :
-        logging.debug('Launch a %d seconds timeout before shutdown of the sprinkler',brightness)
+        logging.debug('Launch a %d seconds timeout before shutdown',brightness)
         self.timer = io_loop.call_later(
             brightness,
             self.timeout_shutdown_level,
